@@ -1,0 +1,7 @@
+﻿  KArray.h
+  KArray.cpp
+  KList.cpp
+  main.cpp
+  正在生成代码...
+x64\Debug\KArray.obj : warning LNK4042: 对象被多次指定；已忽略多余的指定
+  T4.vcxproj -> C:\WorkSpace\cppStudy\T4\x64\Debug\T4.exe
