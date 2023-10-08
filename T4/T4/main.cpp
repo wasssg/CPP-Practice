@@ -10,7 +10,7 @@ int main() {
 }
 
 void customArray() {
-	auto a1 = new kArray<int>(5);
+	auto a1 = new KArray<int>(5);
 	a1->push(0);
 	a1->push(1);
 	a1->push(2);
@@ -30,7 +30,7 @@ void customArray() {
 	cout << index << endl;
 }
 void customList() {
-	auto l1 = new klist<int>();
+	auto l1 = new KList<int>();
 	l1->push(0);
 	l1->push(1);
 	l1->push(2);

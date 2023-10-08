@@ -2,23 +2,22 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-class kString {
+class KString {
 public:	
-	kString():m_data(nullptr), m_size(0) {};
-	kString(const char* str);
-	kString(const kString& str);
-	kString(int size);
+	KString():m_data(nullptr), m_size(0) {};
+	KString(const char* str);
+	KString(const KString& str);
+	KString(int size);
 	int len();
-	friend ostream& operator<< (ostream& cout, const kString& obj);
-	kString sub(int start, int length);
+	friend ostream& operator<< (ostream& cout, const KString& obj);
+	KString sub(int start, int length);
 	char* append(const char* str);
 	int find(const char* str);
-	bool operator==(const kString& other);
-	//vector<kString> split(const char* str);
-	kString* split(const char* str);
+	bool operator==(const KString& other);
+	KString* split(const char* str);
 	
 private:
-	char* m_data;
+	char* m_data=nullptr;
 	int m_size;
 	int getLength(const char* str) {
 		int len = 0;

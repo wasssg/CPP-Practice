@@ -1,20 +1,20 @@
 #include "KArray.h"
 template<class T>
-kArray<T>::kArray() {
+KArray<T>::KArray() {
 	m_data = nullptr;
 	m_capacity = 0;
 	m_length = 0;
 }
 
 template<class T>
-kArray<T>::kArray(T capacity) {
+KArray<T>::KArray(T capacity) {
 	m_data = new T[capacity];
 	m_capacity = capacity;
 	m_length = 0;
 }
 
 template<class T>
-kArray<T>::~kArray() {
+KArray<T>::~KArray() {
 	if (m_data != nullptr) {
 		delete[]m_data;
 		this->m_capacity = 0;
@@ -24,17 +24,17 @@ kArray<T>::~kArray() {
 }
 
 template<class T>
-int kArray<T>::length() {
+int KArray<T>::length() {
 	return m_length;
 }
 
 template<class T>
-int kArray<T>::capacity() {
+int KArray<T>::capacity() {
 	return m_capacity;
 }
 
 template<class T>
-void kArray<T>::kReserve(int capacity) {
+void KArray<T>::kReserve(int capacity) {
 	if (m_capacity >= capacity) return;
 	int* newData = new T[m_capacity * capacity];
 	for (int i = 0; i < m_capacity; i++) {
@@ -45,12 +45,12 @@ void kArray<T>::kReserve(int capacity) {
 }
 
 template<class T>
-int& kArray<T>::operator [](int index) {
+int& KArray<T>::operator [](int index) {
 	return m_data[index];
 }
 
 template<class T>
-void kArray<T>::push(T data) {
+void KArray<T>::push(T data) {
 	if (m_length > m_capacity) {
 		this->kReserve(2);
 	}
@@ -59,7 +59,7 @@ void kArray<T>::push(T data) {
 }
 
 template<class T>
-void kArray<T>::insert(int index, T data) {
+void KArray<T>::insert(int index, T data) {
 	if (m_length + 1 > m_capacity) this->kReserve(2);
 	if (index > m_length) index = m_length;
 
@@ -71,7 +71,7 @@ void kArray<T>::insert(int index, T data) {
 }
 
 template<class T>
-void kArray<T>::show() {
+void KArray<T>::show() {
 	for (int i = 0; i < m_length; i++) {
 		cout << m_data[i] << "   ";
 	}
@@ -79,7 +79,7 @@ void kArray<T>::show() {
 }
 
 template<class T>
-void kArray<T>::remove(int index) {
+void KArray<T>::remove(int index) {
 	if (index > m_length) index = m_length;
 	for (int i = index; i < m_length; i++)
 	{
@@ -89,18 +89,18 @@ void kArray<T>::remove(int index) {
 }
 
 template<class T>
-void kArray<T>::pop() {
+void KArray<T>::pop() {
 	if (m_length <= 0) return;
 	m_length--;
 }
 
 template<class T>
-void kArray<T>::clear() {
+void KArray<T>::clear() {
 	delete[]m_data;
 }
 
 template<class T>
-int kArray<T>::findeIndex(T data) {
+int KArray<T>::findeIndex(T data) {
 	for (int i = 0; i < m_length; i++)
 	{
 		if (m_data[i] == data)  return i;

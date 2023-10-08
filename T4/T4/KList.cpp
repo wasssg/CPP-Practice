@@ -3,15 +3,15 @@
 
 
 template <class T>
-klist<T>::klist() {
-	this->_HeadNode = new klistNode<T>();
+KList<T>::KList() {
+	this->_HeadNode = new KListNode<T>();
 }
 
 template <class T>
-void klist<T>::push(T data) {
+void KList<T>::push(T data) {
 
-	klistNode<T>* NewNode = new klistNode<T>(data);
-	klistNode<T>* CurrentNode = this->_HeadNode;
+	KListNode<T>* NewNode = new KListNode<T>(data);
+	KListNode<T>* CurrentNode = this->_HeadNode;
 	while (CurrentNode->nextNode != nullptr)
 	{
 		CurrentNode = CurrentNode->nextNode;
@@ -22,8 +22,8 @@ void klist<T>::push(T data) {
 }
 
 template <class T>
-void klist<T>::foreach() {
-	klistNode<T>* CurrentNode = this->_HeadNode;
+void KList<T>::foreach() {
+	KListNode<T>* CurrentNode = this->_HeadNode;
 	while (CurrentNode->nextNode != nullptr)
 	{
 		CurrentNode = CurrentNode->nextNode;
@@ -35,12 +35,12 @@ void klist<T>::foreach() {
 }
 
 template <class T>
-void klist<T>::insert(klistNode<T>* node, int index) {
-	klistNode<T>* currentNode = this->_HeadNode;
+void KList<T>::insert(KListNode<T>* node, int index) {
+	KListNode<T>* currentNode = this->_HeadNode;
 	for (int i = 0; i < index; i++) {
 		currentNode = currentNode->nextNode;
 	}
-	klistNode<T>* tailNode = currentNode->nextNode;
+	KListNode<T>* tailNode = currentNode->nextNode;
 	currentNode->nextNode = node;
 	node->nextNode = tailNode;
 	tailNode->prevNode = node;
@@ -48,8 +48,8 @@ void klist<T>::insert(klistNode<T>* node, int index) {
 }
 
 template <class T>
-klistNode<T>* klist<T>::find(int index) {
-	klistNode<T>* currentNode = this->_HeadNode;
+KListNode<T>* KList<T>::find(int index) {
+	KListNode<T>* currentNode = this->_HeadNode;
 	while (currentNode != nullptr && index >= 0)
 	{
 		currentNode = currentNode->nextNode;
@@ -59,12 +59,12 @@ klistNode<T>* klist<T>::find(int index) {
 }
 
 template <class T>
-void klist<T> ::popAll() {
+void KList<T> ::popAll() {
 	if (this->_HeadNode == nullptr)
 	{
 		return;
 	}
-	klistNode<T>* CurrentNode = this->_HeadNode->nextNode;
+	KListNode<T>* CurrentNode = this->_HeadNode->nextNode;
 	while (CurrentNode != nullptr)
 	{
 		delete CurrentNode->prevNode;
@@ -74,16 +74,16 @@ void klist<T> ::popAll() {
 }
 
 template <class T>
-void klist<T> ::removeByIndex(int index) {
+void KList<T> ::removeByIndex(int index) {
 
-	klistNode<T>* removeNode = this->find(index);
+	KListNode<T>* removeNode = this->find(index);
 	removeNode->prevNode->nextNode = removeNode->nextNode;
 	delete removeNode;
 }
 
 template <class T>
-void klist<T> ::removeByNode(klistNode<T>* node) {
-	klistNode<T>* removeNode = this->_HeadNode;
+void KList<T> ::removeByNode(KListNode<T>* node) {
+	KListNode<T>* removeNode = this->_HeadNode;
 	while (removeNode->data != node->data) {
 		removeNode = removeNode->nextNode;
 	}

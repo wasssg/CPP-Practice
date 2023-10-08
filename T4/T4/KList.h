@@ -5,33 +5,33 @@ using namespace std;
 
 // node
 template <typename T>
-struct klistNode {
+struct KListNode {
 	T data;
-	klistNode<T>* nextNode = nullptr;
-	klistNode<T>* prevNode = nullptr;
-	klistNode() {};
-	klistNode(int val) :data(val) {};
+	KListNode<T>* nextNode = nullptr;
+	KListNode<T>* prevNode = nullptr;
+	KListNode() {};
+	KListNode(int val) :data(val) {};
 };
 
 
 // list
 template <typename T>
-class klist {
+class KList {
 public:
-	klist();
+	KList();
 
 	void push(T data);
 	void foreach();
-	void insert(klistNode<T>* node, int index);
-	klistNode<T>* find(int data);
+	void insert(KListNode<T>* node, int index);
+	KListNode<T>* find(int data);
 	void popAll();
 
 
 	void removeByIndex(int index);
-	void removeByNode(klistNode<T>* node);
+	void removeByNode(KListNode<T>* node);
 
 private:
-	klistNode<T>* _HeadNode;
+	KListNode<T>* _HeadNode;
 };
 
 

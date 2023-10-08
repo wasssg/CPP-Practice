@@ -3,12 +3,12 @@
 using namespace std;
 
 template<class T>
-class kArray {
+class KArray {
 public:
-	kArray();
+	KArray();
 
-	kArray(T capacity);
-	~kArray();
+	KArray(T capacity);
+	~KArray();
 
 	int length();
 	int capacity();

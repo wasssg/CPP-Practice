@@ -23,7 +23,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Kstring.h">
+    <ClInclude Include="KString.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

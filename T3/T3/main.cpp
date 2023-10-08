@@ -11,11 +11,12 @@ int main() {
 	//cout << endl;
 	//cout << str2 << endl;
 	//cout << str1.find("ce");
-	auto str4 = kString("23a22222a123a5555a11111");
+	auto str4 = KString("23a22222a123a5555a11111");
 	auto res=str4.split("a");
-	for (int i = 0; i < res->len(); i++) {
+	cout << res[2] << endl;
+	/*for (int i = 0; i < res->len(); i++) {
 		cout << res[i] << endl;
-	}
+	}*/
 	//auto str = str4.sub(0, 2);
 		//cout << str << endl;
 }
