@@ -1,15 +1,17 @@
 #include "RingBuffer.h"
 int main() {
 	RingBuffer* rBuf = new RingBuffer(3);
-	for (int i = 0; i < 10000; i++)
+	for (int i = 0; i < 9; i++)
 	{
 		rBuf->push(i);
-	}
-	cout << rBuf->getSize() << "    ";
-	
+		cout <<i+1<<"  "<< rBuf->getSize() << endl;
+	}	
 
-	for (int i = 0; i < 1340; i++) {
+	cout << "---------------------------------------" << endl;
+	
+	for (int i = 0; i < 5; i++) {
 		rBuf->pop();
+		cout << i + 1 << "  " << rBuf->getSize() << endl;
 	}
-	cout << rBuf->getSize() << "    ";
+	
 }
